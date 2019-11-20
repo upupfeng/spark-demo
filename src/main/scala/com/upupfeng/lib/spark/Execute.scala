@@ -7,9 +7,15 @@ import org.apache.spark.sql.{DataFrame, SparkSession}
   */
 object Execute {
 
-  def sql(spark: SparkSession, sql :String): DataFrame ={
+  def sql(spark: SparkSession, sql: String): DataFrame = {
     println(sql)
     spark.sql(sql)
   }
 
+
+  def hiveQ(spark: SparkSession, sql: String): Unit = {
+    spark
+      .sql(sql)
+      .show()
+  }
 }
